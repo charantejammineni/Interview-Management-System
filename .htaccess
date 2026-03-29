@@ -1,0 +1,7 @@
+
+RewriteOptions inherit
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^ims\.specanciens\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.ims\.specanciens\.com$
+RewriteRule ^/?$ "http\:\/\/www\.ims\.specanciens\.com\/login\.php" [R=301,L]
