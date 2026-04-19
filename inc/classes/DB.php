@@ -3,7 +3,7 @@ class DB {
     private $host = "localhost";
     private $dbname = "specanciensdb";
     private $dbuser = "root";
-    private $dbpass = "";
+    private $dbpass = "root";
     private $conn;
 
     public function __construct() {
