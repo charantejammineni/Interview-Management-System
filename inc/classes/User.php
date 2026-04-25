@@ -37,7 +37,7 @@ class User {
             }
 
             // Check for existing email
-            $checkSql = "SELECT email FROM user WHERE email = ?";
+            $checkSql = "SELECT email FROM ims_user WHERE email = ?";
             $checkArr = [$email];
             $check = $this->db->simplequery($checkSql, $checkArr);
             if ($check && $check->rowCount() > 0) {
@@ -47,7 +47,7 @@ class User {
             // Store hashed password (note: consider using password_hash for stronger security)
             $hashedPassword = md5($password); // Replace with password_hash() for production
 
-            $insertSql = "INSERT INTO user (user_name, email, password, role) VALUES (?, ?, ?, 'student')";
+            $insertSql = "INSERT INTO ims_user (user_name, email, password, role) VALUES (?, ?, ?, 'student')";
             $insertArr = [$username, $email, $hashedPassword];
             $insert = $this->db->simplequery($insertSql, $insertArr);
 
